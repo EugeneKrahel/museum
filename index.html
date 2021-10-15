@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>museum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="flex-content" style="width: 195px">
+            <div class="svg"></div>
+            <span>Louvre</span>
+          </div>
+          <div style="width: 720px">
+            <ul class="flex-content">
+              <li><a href="#Visiting">Visiting</a></li>
+              <li><a href="#Explore">Explore</a></li>
+              <li><a href="#Video">Video</a></li>
+              <li><a href="#Tickets">Tickets</a></li>
+              <li><a href="#Contacts">Contacts</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1 style="display: none"></h1>
+      <section class="section dark-section" id="Welcome">
+        <div class="container welcome">
+          <h2 style="padding: 114px 0 0">
+            welcome <br />
+            to the louvre
+          </h2>
+          <p>From the castle to the museum</p>
+
+          <button id="Discover" onclick="redirectURL('Discover')">
+            Discover the Louvre
+          </button>
+        </div>
+      </section>
+      <section class="section" id="Visiting">
+        <div class="container">
+          <h2 class="underline-title">Virtual Tour</h2>
+          <div
+            style="margin-top: 103px"
+            id="cardContainer"
+            class="cardContainer"
+          >
+            <!-- 6 cards here -->
+          </div>
+        </div>
+      </section>
+      <section class="section dark-section" id="Explore">
+        <div class="container flex-content explore">
+          <div style="width: 660px">
+            <h2 class="underline-title">Picture explore</h2>
+            <p>
+              Las Meninas is a 1656 painting by Diego Velázquez, the leading
+              artist of the Spanish Golden Age.
+            </p>
+            <p>
+              It was cleaned in 1984 to remove a
+              <span style="color: #9d8665">"yellow veil"</span> of dust that had
+              gathered since the previous restoration in the 19th century.
+            </p>
+            <p>
+              The cleaning provoked furious protests, not because the picture
+              had been damaged in any way, but because it looked different.
+            </p>
+          </div>
+          <img
+            style="display: block; padding-top: 15px"
+            src="assets/img/Picture explore.png"
+          />
+        </div>
+      </section>
+      <section class="section" id="Video">
+        <div class="container video">
+          <img
+            src="assets/video/poster0.jpg"
+            style="display: block; width: 100%; height: 629px"
+          />
+          <div class="video-player">
+            <img src="assets/svg/back.svg" />
+            <img src="assets/svg/pause.svg" />
+            <img src="assets/svg/forward.svg" />
+            <input
+              type="range"
+              value="40"
+              min="0"
+              max="100"
+              step="1"
+              class="progress"
+            />
+            <img src="assets/svg/volume.svg" />
+            <input
+              type="range"
+              value="40"
+              min="0"
+              max="100"
+              step="1"
+              class="progress-volume"
+            />
+            <img src="assets/svg/whole_screen.svg" />
+          </div>
+          <div class="flex-content" style="margin-top: 40px">
+            <h2>Video journey</h2>
+            <p style="width: 50%">
+              Enter and visit one of the most famous museums in the world and
+              enjoy masterpieces such as Mona Lisa or Hammurabi's Code
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section dark-section" id="Tickets">
+        <div class="container">
+          <h2 class="underline-title" style="margin-bottom: 106px">
+            Buy tickets
+          </h2>
+          <div class="flex-content">
+            <img src="assets/img/buy.png" style="display: block; width: 50%" />
+            <div
+              class="flex-content"
+              style="width: 50%; align-self: flex-start"
+            >
+              <div class="button-holder" style="align-self: flex-start">
+                <h4 style="margin: 0 0 50px">Ticket Type</h4>
+                <div class="radio-button">
+                  <input
+                    type="radio"
+                    checked=""
+                    class="regular-radio"
+                    name="radio-1-set"
+                    id="radio-1-set"
+                  />
+                  <label for="radio-1-set"></label>
+                  <span class="radio-text">Permanent exhibition</span>
+                  <br />
+                </div>
+                <div class="radio-button">
+                  <input
+                    type="radio"
+                    checked=""
+                    class="regular-radio"
+                    name="radio-1-set"
+                    id="radio-2-set"
+                  />
+                  <label for="radio-2-set"></label>
+                  <span class="radio-text">Temporary exhibition</span>
+                  <br />
+                </div>
+                <div class="radio-button">
+                  <input
+                    type="radio"
+                    checked=""
+                    class="regular-radio"
+                    name="radio-1-set"
+                    id="radio-3-set"
+                  />
+                  <label for="radio-3-set"></label>
+                  <span class="radio-text">Combined Admission</span>
+                  <br />
+                </div>
+              </div>
+              <div style="align-self: flex-start">
+                <h4 style="margin: 0 0 11px">Amount</h4>
+                <p>Basic 18+</p>
+                <div class="purchase-amount-input">
+                  <button
+                    class="amount-input-minus input-minus input-operator btn"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    type="number"
+                    class="amount-input-val input-val basic-val"
+                    min="0"
+                    max="20"
+                    value="0"
+                    step="1"
+                    readonly
+                  />
+                  <button
+                    class="amount-input-plus input-plus input-operator btn"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Senior 65+</p>
+                <div class="purchase-amount-input">
+                  <button
+                    class="amount-input-minus input-minus input-operator btn"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    type="number"
+                    class="amount-input-val input-val senior-val"
+                    min="0"
+                    max="20"
+                    value="0"
+                    step="1"
+                    readonly
+                  />
+                  <button
+                    class="amount-input-plus input-plus input-operator btn"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+                <span class="purchase-amount-total">
+                  Total €<output
+                    id="outputValue"
+                    data-basic="0"
+                    data-senior="0"
+                  >
+                    0
+                  </output>
+                </span>
+                <button class="purchase-amount-buy btn">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="Contacts">
+        <div class="container">
+          <h2 class="underline-title" style="margin-bottom: 113px">Contacts</h2>
+          <div class="flex-content">
+            <div class="contacts-info" style="align-items: flex-start">
+              <h3 class="contacts-info-head">Palais Royal Musee du Louvre</h3>
+              <ul class="contacts-info-list">
+                <li class="contacts-info-item">
+                  address:
+                  <a
+                    href="https://goo.gl/maps/r3Nr252hXXiNL9sV8"
+                    class="contacts-info-link link"
+                    >75001 Paris, France</a
+                  >
+                </li>
+                <li class="contacts-info-item">
+                  phone:
+                  <a href="tel:+330140205050" class="contacts-info-link link"
+                    >+33(0) 1 40 20 50 50</a
+                  >
+                </li>
+                <li class="contacts-info-item">
+                  mail:
+                  <a
+                    href="mailto:info@louvre.fr"
+                    class="contacts-info-link link"
+                    >info@louvre.fr</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <img src="assets/img/Map.png" style="align-items: flex-start" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container flex-content">
+        <div class="flex-content" style="width: 195px; padding-right: 145px;">
+          <div class="svg"></div>
+          <span>Louvre</span>
+        </div>
+        <div class="foot-nav-wrapper">
+          <nav class="foot-nav">
+            <ul class="foot-nav-list">
+              <li class="foot-list-item">
+                <a href="#Welcome" class="foot-link link">Welcome</a>
+              </li>
+              <li class="foot-list-item">
+                <a href="#Visiting" class="foot-link link">Visiting</a>
+              </li>
+              <li class="foot-list-item">
+                <a href="#Explore" class="foot-link link">Explore</a>
+              </li>
+              <li class="foot-list-item">
+                <a href="#Video" class="foot-link link">Video</a>
+              </li>
+              <li class="foot-list-item">
+                <a href="#Tickets" class="foot-link link">Tickets</a>
+              </li>
+              <li class="foot-list-item">
+                <a href="#Contacts" class="foot-link link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="foot-media-list media-list">
+            <li class="media-list-item">
+              <a
+                href="https://www.youtube.com/user/louvre"
+                class="media-link link"
+                target="_blank"
+              >
+              </a>
+            </li>
+            <li class="media-list-item">
+              <a
+                href="https://www.instagram.com/museelouvre/"
+                class="media-link link"
+                target="_blank"
+              >
+              </a>
+            </li>
+            <li class="media-list-item">
+              <a
+                href="https://www.facebook.com/museedulouvre"
+                class="media-link link"
+                target="_blank"
+              >
+              </a>
+            </li>
+            <li class="media-list-item">
+              <a
+                href="https://twitter.com/museelouvre"
+                class="media-link link"
+                target="_blank"
+              >
+              </a>
+            </li>
+            <li class="media-list-item">
+              <a
+                href="https://www.pinterest.fr/museedulouvre/_created/"
+                class="media-link link"
+                target="_blank"
+              >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
