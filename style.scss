@@ -173,6 +173,7 @@ section {
   @include flex();
   flex-wrap: wrap;
   gap: 77px 60px;
+  margin-top: 103px;
 }
 
 .visiting {
@@ -232,11 +233,20 @@ section {
   > *:second-child {
     align-self: flex-end;
   }
+  img {
+    display: block;
+    padding-top: 15px
+  }
 }
 
 .video {
   display: block;
   margin-top: 15px !important;
+  > img {
+    display: block; 
+    width: 100%; 
+    height: 629px
+  }
   p {
     margin: 0;
     @include RobotoFont($line-height: 38px, $letter-spacing: normal);
