@@ -1,3 +1,41 @@
+@mixin RobotoFont(
+  $font-weight: 300,
+  $font-size: 22px,
+  $line-height: 50px,
+  $letter-spacing: 2px
+) {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin ForumFont(
+  $font-weight: normal,
+  $font-size: 80px,
+  $line-height: 90px,
+  $letter-spacing: 5px,
+  $text-transform: uppercase
+) {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+
+  text-transform: $text-transform;
+}
+
+@mixin flex($dir: row, $justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $dir;
+  align-items: $align;
+}
+
 $Bg-dark: #030303;
 $Dark-red: #710707;
 $Font-gold: #9d8665;
@@ -19,7 +57,7 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 1920px;
   height: 200px;
 
   background: $Bg-dark;
@@ -35,9 +73,7 @@ header {
 .flex-content {
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex();
 }
 
 .svg {
@@ -50,13 +86,7 @@ header {
 nav span,
 footer span {
   width: 125px;
-  font-family: Forum;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-
-  letter-spacing: 5px;
-  text-transform: uppercase;
+  @include ForumFont($font-size: 28px, $line-height: 50px);
   color: $White;
 }
 
@@ -69,13 +99,8 @@ nav ul li a {
   cursor: pointer;
   text-decoration: none;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 22px;
-  line-height: 50px;
+  @include RobotoFont($font-weight: 200);
 
-  letter-spacing: 2px;
   color: $White;
 }
 
@@ -85,38 +110,22 @@ nav ul li a {
 }
 
 section {
-  width: 100%;
-  color: $Font-gold;
-}
-
-section h2 {
-  margin: 0;
-  padding: 0;
-  font-family: Forum;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 80px;
-  line-height: 90px;
-
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.welcome p {
-  margin: 0;
-  padding-top: 26px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 28px;
-  line-height: 33px;
-
-  letter-spacing: 2px;
+  width: 1920px;
+  color: $Black;
+  h2 {
+    color: $Font-gold;
+    margin: 0;
+    padding: 0;
+    @include ForumFont();
+  }
 }
 
 .dark-section {
   color: $White !important;
   background-color: $Bg-dark;
+  h2 {
+    color: $White;
+  }
 }
 
 .welcome {
@@ -126,26 +135,25 @@ section h2 {
   background-position: 100% 100%;
   background-size: 1215px;
   height: 750px;
-}
 
-.welcome button {
-  cursor: pointer;
-  margin-top: 76px;
-  width: 360px;
-  height: 75px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 22px;
-  line-height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 2px;
-  color: $White;
-  background: $Dark-red;
-  border: 0;
-  border-radius: 10px;
+  p {
+    margin: 0;
+    padding-top: 26px;
+    @include RobotoFont($font-size: 28px, $line-height: 33px);
+  }
+
+  button {
+    color: $White;
+    background: $Dark-red;
+    @include flex($justify: center);
+    cursor: pointer;
+    margin-top: 76px;
+    width: 360px;
+    height: 75px;
+    border: 0;
+    border-radius: 10px;
+    @include RobotoFont($font-weight: 200, $line-height: 26px);
+  }
 }
 
 .underline-title {
@@ -162,120 +170,88 @@ section h2 {
 }
 
 .cardContainer {
-  display: flex;
-  flex-flow: row wrap;
+  @include flex();
+  flex-wrap: wrap;
   gap: 77px 60px;
 }
 
-.card {
-  cursor: pointer;
+.visiting {
+  .card {
+    img {
+      display: block;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    h3 {
+      margin: 25px 0 21px;
+      position: relative;
+      @include ForumFont($font-size: 32px, $line-height: 35px);
+    }
+    h3::after {
+      position: absolute;
+      left: 0;
+      bottom: -11px;
+      content: "";
+      height: 2px;
+      width: 68%;
+      background-color: $Dark-red;
+      transition: all 0.2s ease-in-out;
+    }
+    span.s22 {
+      @include RobotoFont(
+        $font-weight: 200,
+        $line-height: 26px,
+        $letter-spacing: normal
+      );
+    }
+    span.s18 {
+      @include RobotoFont(200, 18px, 21px, normal);
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+  .card:hover h3::after {
+    width: 100%;
+  }
 }
 
-.card:hover {
-  transform: scale(1.1);
-}
-
-.card img {
-  display: block;
-}
-
-.card h3 {
-  margin: 25px 0 21px;
-  position: relative;
-
-  font-family: Forum;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 35px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-
-  color: $Black;
-}
-
-.card h3::after {
-  content: "";
-  position: absolute;
-  bottom: -11px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  width: 300px;
-  background-color: $Dark-red;
-}
-
-.card span {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 200;
-}
-
-.card span.s22 {
-  font-size: 22px;
-  line-height: 26px;
-
-  color: $Black;
-}
-
-.card span.s18 {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: $Black;
-}
-
-.explore h2 {
-  margin-bottom: 103px;
-}
-
-.explore p {
-  padding: 0;
-  margin: 0 0 25px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 38px;
-}
-
-.explore > *:first-child {
-  align-self: flex-start;
-}
-
-.explore > *:second-child {
-  align-self: flex-end;
+.explore {
+  h2 {
+    margin-bottom: 103px;
+  }
+  p {
+    padding: 0;
+    margin: 0 0 25px;
+    @include RobotoFont($line-height: 38px, $letter-spacing: normal);
+  }
+  > *:first-child {
+    align-self: flex-start;
+  }
+  > *:second-child {
+    align-self: flex-end;
+  }
 }
 
 .video {
   display: block;
   margin-top: 15px !important;
-}
-
-.video p {
-  margin: 0;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 38px;
-  /* or 175% */
-  color: $Black !important;
-}
-
-.video-player {
-  background-color: $Black;
-  width: 100%;
-  height: 57px;
-  padding-top: 28px;
-}
-
-.video-player img {
-  display: inline-block;
-  margin-left: 41px;
-  vertical-align: middle;
+  p {
+    margin: 0;
+    @include RobotoFont($line-height: 38px, $letter-spacing: normal);
+  }
+  .video-player {
+    background-color: $Black;
+    width: 100%;
+    height: 57px;
+    padding-top: 28px;
+    img {
+      display: inline-block;
+      margin-left: 41px;
+      vertical-align: middle;
+    }
+  }
 }
 
 .progress,
@@ -313,35 +289,50 @@ section h2 {
   background: #434343;
 }
 
-label {
-  display: inline;
-}
-.radio-1 {
-  width: 193px;
-}
-.button-holder {
-  padding-left: 60px;
-}
-
-section h4 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 33px;
-  color: $White;
+.tickets {
+  label {
+    display: inline;
+  }
+  .radio-1 {
+    width: 193px;
+  }
+  .radio-holder {
+    padding-left: 60px;
+    align-self: flex-start;
+  }
+  h4 {
+    @include RobotoFont(bold, 28px, 33px, normal);
+  }
+  .amount-tickets {
+    align-self: flex-start;
+    width: 175px;
+    h4 {
+      margin: 0 0 11px;
+      text-align: end;
+    }
+    h4.purchase-amount-total {
+      margin: 50px 0;
+    }
+    p {
+      margin: 0 0 14px;
+      @include RobotoFont($line-height: 26px, $letter-spacing: normal);
+    }
+  }
 }
 
 .regular-radio {
   display: none;
 }
+
 .regular-radio + label {
   border: 2px solid #ffffff;
   border-radius: 50%;
   display: inline-block;
   padding: 6.5px;
   position: relative;
+  margin-right: 23px;
 }
+
 .regular-radio:checked + label:after {
   background: none repeat scroll 0 0 #ffffff;
   border-radius: 50%;
@@ -353,9 +344,10 @@ section h4 {
   top: 3px;
   width: 7px;
 }
+
 .regular-radio:checked + label {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid $White;
+  color: $White;
   padding: 6.5px;
 }
 
@@ -364,39 +356,30 @@ section h4 {
 }
 
 .radio-text {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 26px;
-  /* identical to box height */
-
-  color: $White;
+  @include RobotoFont($line-height: 26px, $letter-spacing: normal);
 }
 
 .purchase-amount-input {
-  margin-bottom: 10px;
-  border: 3px solid #000000;
+  margin-bottom: 35px;
+  border: 3px solid $White;
   box-sizing: border-box;
   width: 150px;
   height: 50px;
   display: flex;
 }
 
-.input-operator {
+.purchase-amount-input:nth-of-type(2) {
+  margin-bottom: 0px;
+}
+
+.btn {
+  border: 0px;
   flex-basis: 30%;
   font-size: 32px;
   line-height: 37px;
   text-align: center;
   color: $White;
   background: none;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-  letter-spacing: 2px;
-  display: block;
 }
 
 input::-webkit-outer-spin-button,
@@ -416,9 +399,7 @@ input[type="number"] {
   border: none;
   width: 40%;
   text-align: center;
-}
-
-.input-val {
+  
   color: $White;
   background-color: $Black;
 }
@@ -429,40 +410,41 @@ input[type="number"] {
   background: $White;
   border-radius: 2px;
   color: $Black;
-  margin-bottom: 107px;
   font-weight: 300;
   font-size: 22px;
   line-height: 26px;
 }
 
 .contacts-info {
-  display: flex;
-  flex-direction: column;
+  align-self: flex-start;
+  @include flex($dir: column, $align: flex-start)
 }
 
 .contacts-info-head {
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 33px;
-  margin-bottom: 50px;
+  @include RobotoFont(500, 28px, 33px, normal);
+  text-align: left;
+  margin: 10px 0 36px 0;
   max-width: 230px;
-  color: $Black;
-  justify-content: normal;
 }
 
 .contacts-info-list {
+  padding: 0;
+  margin: 0;
   justify-content: normal;
   width: 300px;
 }
 
+.contacts-info-item{
+  padding-bottom: 20px;
+}
+
 .contacts-info-item,
 .contacts-info-item * {
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 26px;
+  list-style-type: none;
+  @include RobotoFont($line-height: 26px, $letter-spacing: normal);
+  color: $Black;
   letter-spacing: normal;
   text-transform: initial;
-  color: #000000;
 }
 
 .link {
@@ -480,6 +462,7 @@ li.contacts-info-item:hover {
 footer {
   background-color: $Black;
   height: 300px;
+  width: 1920px;
 }
 
 .link {
@@ -491,35 +474,35 @@ footer {
   transform: scale(1.1);
 }
 
-.foot-link {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 22px;
-  line-height: 50px;
-
-  letter-spacing: 2px;
+.foot-logo {
+  @include flex($align: flex-start);
+  width: 195px; 
+  padding-right: 145px;
+  align-self: start;
 }
 
-.foot-nav {
-  flex-basis: 40%;
+.foot-link {
+  @include RobotoFont(200, 22px, 50px, 2px);
 }
 
 .foot-nav-wrapper {
   display: flex;
-  flex-basis: 79.5%;
+  flex-basis: 1100px;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+}
+
+.foot-nav {
+  flex-basis: 366px;
 }
 
 .foot-nav-list {
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  @include flex($dir: column, $align: flex-start);
   flex-wrap: wrap;
   height: 150px;
-  column-gap: 20%;
+  column-gap: 153px;
+  padding: 0;
 }
 
 .foot-list-item {
@@ -528,16 +511,13 @@ footer {
 }
 
 .foot-media-list {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 75px;
+  @include flex($align: flex-end);
   margin-left: auto;
-  max-width: 340px;
+  max-width: 336px;
   width: 100%;
 }
 
 .media-list-item {
-  box-sizing: border-box;
   width: 48px;
   height: 48px;
   border: 1px solid #666666;

@@ -54,7 +54,7 @@
         </div>
       </section>
       <section class="section" id="Visiting">
-        <div class="container">
+        <div class="container visiting">
           <h2 class="underline-title">Virtual Tour</h2>
           <div
             style="margin-top: 103px"
@@ -128,8 +128,8 @@
         </div>
       </section>
       <section class="section dark-section" id="Tickets">
-        <div class="container">
-          <h2 class="underline-title" style="margin-bottom: 106px">
+        <div class="container tickets">
+          <h2 class="underline-title" style="margin-bottom: 103px">
             Buy tickets
           </h2>
           <div class="flex-content">
@@ -138,7 +138,7 @@
               class="flex-content"
               style="width: 50%; align-self: flex-start"
             >
-              <div class="button-holder" style="align-self: flex-start">
+              <div class="radio-holder">
                 <h4 style="margin: 0 0 50px">Ticket Type</h4>
                 <div class="radio-button">
                   <input
@@ -177,65 +177,64 @@
                   <br />
                 </div>
               </div>
-              <div style="align-self: flex-start">
-                <h4 style="margin: 0 0 11px">Amount</h4>
-                <p>Basic 18+</p>
-                <div class="purchase-amount-input">
-                  <button
-                    class="amount-input-minus input-minus input-operator btn"
-                    onclick="this.nextElementSibling.stepDown()"
-                  >
-                    –
-                  </button>
-                  <input
-                    type="number"
-                    class="amount-input-val input-val basic-val"
-                    min="0"
-                    max="20"
-                    value="0"
-                    step="1"
-                    readonly
-                  />
-                  <button
-                    class="amount-input-plus input-plus input-operator btn"
-                    onclick="this.previousElementSibling.stepUp()"
-                  >
-                    +
-                  </button>
+              <div class="amount-tickets">
+                <div style="padding-left: 25px;">
+                  <h4>Amount</h4>
+                  <p>Basic 18+</p>
+                  <div class="purchase-amount-input">
+                    <button
+                      class="amount-input-minus btn"
+                      onclick="this.nextElementSibling.stepDown()"
+                    >
+                      –
+                    </button>
+                    <input
+                      type="number"
+                      id="basic"
+                      class="amount-input-val basic"
+                      min="0"
+                      max="20"
+                      value="0"
+                      step="1"
+                      readonly
+                    />
+                    <button
+                      class="amount-input-plus btn"
+                      onclick="this.previousElementSibling.stepUp()"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p>Senior 65+</p>
+                  <div class="purchase-amount-input">
+                    <button
+                      class="amount-input-minus btn"
+                      onclick="this.nextElementSibling.stepDown()"
+                    >
+                      –
+                    </button>
+                    <input
+                      type="number"
+                      id="senior"
+                      class="amount-input-val senior"
+                      min="0"
+                      max="20"
+                      value="0"
+                      step="1"
+                      readonly
+                    />
+                    <button
+                      class="amount-input-plus btn"
+                      onclick="this.previousElementSibling.stepUp()"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <h4 class="purchase-amount-total">
+                    Total €
+                    <output id="output">220</output>
+                  </h4>
                 </div>
-                <p>Senior 65+</p>
-                <div class="purchase-amount-input">
-                  <button
-                    class="amount-input-minus input-minus input-operator btn"
-                    onclick="this.nextElementSibling.stepDown()"
-                  >
-                    –
-                  </button>
-                  <input
-                    type="number"
-                    class="amount-input-val input-val senior-val"
-                    min="0"
-                    max="20"
-                    value="0"
-                    step="1"
-                    readonly
-                  />
-                  <button
-                    class="amount-input-plus input-plus input-operator btn"
-                    onclick="this.previousElementSibling.stepUp()"
-                  >
-                    +
-                  </button>
-                </div>
-                <span class="purchase-amount-total">
-                  Total €<output
-                    id="outputValue"
-                    data-basic="0"
-                    data-senior="0"
-                  >
-                    0
-                  </output>
-                </span>
                 <button class="purchase-amount-buy btn">Buy Now</button>
               </div>
             </div>
@@ -243,10 +242,10 @@
         </div>
       </section>
       <section class="section" id="Contacts">
-        <div class="container">
-          <h2 class="underline-title" style="margin-bottom: 113px">Contacts</h2>
+        <div class="container contacts">
+          <h2 class="underline-title" style="margin-bottom: 103px">Contacts</h2>
           <div class="flex-content">
-            <div class="contacts-info" style="align-items: flex-start">
+            <div class="contacts-info">
               <h3 class="contacts-info-head">Palais Royal Musee du Louvre</h3>
               <ul class="contacts-info-list">
                 <li class="contacts-info-item">
@@ -273,7 +272,7 @@
                 </li>
               </ul>
             </div>
-            <img src="assets/img/Map.png" style="align-items: flex-start" />
+            <img src="assets/img/Map.png"/>
           </div>
         </div>
       </section>
@@ -281,7 +280,7 @@
 
     <footer>
       <div class="container flex-content">
-        <div class="flex-content" style="width: 195px; padding-right: 145px;">
+        <div class="foot-logo">
           <div class="svg"></div>
           <span>Louvre</span>
         </div>

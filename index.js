@@ -35,16 +35,16 @@ const cards = [
     }
 ];
 
-const container = document.getElementById("cardContainer");
+const container = document.getElementById('cardContainer');
 
 cards.forEach((result) => {
     const card = document.createElement("div");
     card.classList = "card-body";
 
     const content = `
-    <div class="card" onclick="redirectURL('${result.title}')">
+    <div class="card">
         <div>
-            <img src="${result.img}"/>
+            <img src="${result.img}" onclick="redirectURL('${result.title}')"/>
             <h3>${result.title}</h3>
             <span class="s22"> 360° Virtual Tour </span>
             <br />
