@@ -1,0 +1,4 @@
+# Игнорировать css файлы, кроме style.css
+/styles/*.css
+/styles/*.css.map
+/styles/!style.css
