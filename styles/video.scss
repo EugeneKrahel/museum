@@ -1,0 +1,111 @@
+@import "mixins.scss";
+
+.video {
+  display: block;
+  &__head {
+    margin-bottom: 75px;
+  }
+  p {
+    width: 50%;
+    margin: 0;
+    @include RobotoFont($line-height: 38px, $letter-spacing: normal);
+  }
+  &__players {
+    @include flex($dir: column);
+    row-gap: 40px;
+    &__general {
+        width: 100%;
+        & > img {
+            display: block;
+            width: 100%;
+            height: 650px;
+          }
+    }
+    &__buttons {
+      background-color: $Black;
+      width: 100%;
+      height: 57px;
+      padding-top: 28px;
+      img {
+        display: inline-block;
+        margin-left: 41px;
+        vertical-align: middle;
+      }
+    }
+    .other-videos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 42px;
+      row-gap: 36px;
+      & iframe {
+        border: none;
+      }
+      .slider__controls {
+        @include flex($justify: center);
+        flex-grow: 3;
+        gap: 20px;
+      }
+      .slider-prew,
+      .slider-next {
+        width: 10px;
+        height: 12px;
+        background-color: transparent;
+        transition: 0.2s linear;
+        text-decoration: none;
+        outline: none;
+        border: none;
+      }
+      .slider-prew {
+        background: url(../assets/svg/video-slider-prew.svg);
+      }
+      .slider-next {
+        background: url(../assets/svg/video-slider-next.svg);
+      }
+      .slider__dot_default {
+        background: #333333;
+      }
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #999999;
+      }
+    }
+  }
+}
+
+.progress,
+.progress-volume {
+  background: linear-gradient(
+    to right,
+    #82cfd0 0%,
+    #82cfd0 40%,
+    #fff 40%,
+    #fff 100%
+  );
+  border: solid 2px #82cfd0;
+  border-radius: 8px;
+  height: 7px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+.progress {
+  width: 60%;
+}
+
+.progress-volume {
+  width: 10%;
+}
+
+.progress::-webkit-slider-thumb,
+.progress-volume::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #434343;
+}

@@ -1,0 +1,56 @@
+@import "mixins.scss";
+
+.gallery {
+  h2 {
+    margin-bottom: 75px;
+  }
+  &__pictures {
+    position: relative;
+    max-height: 1885px;
+    overflow: hidden;
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-auto-flow: dense;
+      column-gap: 2.5%;
+      img {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 18.5px;
+        padding: 0;
+
+        transition: all 1s;
+        opacity: 0;
+        transform: translate(0, 20%);
+        &.img-show {
+          opacity: 1 !important;
+          transform: translate(0, 0) !important;
+        }
+      }
+      img:nth-child(3n + 1) {
+        grid-column-start: 1;
+        top: 50px;
+      }
+      img:nth-child(3n + 2) {
+        grid-column-start: 2;
+        transition-delay: 0.2s;
+      }
+      img:nth-child(3n + 3) {
+        grid-column-start: 3;
+        top: 50px;
+        transition-delay: 0.4s;
+      }
+      .square {
+        grid-row-end: span 4;
+      }
+      .vertical {
+        grid-row-end: span 5;
+      }
+      .horizontal {
+        grid-row-end: span 3;
+      }
+    }
+  }
+}

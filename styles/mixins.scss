@@ -1,0 +1,43 @@
+@mixin RobotoFont(
+  $font-weight: 300,
+  $font-size: 22px,
+  $line-height: 26px,
+  $letter-spacing: normal
+) {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin ForumFont(
+  $font-weight: normal,
+  $font-size: 80px,
+  $line-height: 90px,
+  $letter-spacing: 5px,
+  $text-transform: uppercase
+) {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+
+  text-transform: $text-transform;
+}
+
+@mixin flex($dir: row, $justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $dir;
+  align-items: $align;
+}
+
+$Bg-dark: #030303;
+$Dark-red: #710707;
+$Font-gold: #9d8665;
+$White: #ffffff;
+$Black: #000000;

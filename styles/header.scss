@@ -1,0 +1,52 @@
+@import "mixins.scss";
+
+header {
+  width: 1920px;
+  height: 150px;
+  background-color: $Black;
+}
+
+.nav-wrapper {
+  @include flex();
+  padding: 0 240px;
+}
+
+.nav-logo {
+  @include flex();
+  width: 199px;
+  height: 33px;
+  margin-top: 59px;
+  margin-bottom: 58px;
+  &_svg {
+    background: no-repeat url("../assets/svg/logo.svg");
+    background-position: 0 9px;
+    width: 49px;
+    height: 50px;
+  }
+  span {
+    width: 125px;
+    @include ForumFont($font-size: 28px, $line-height: 50px);
+    color: $White;
+  }
+}
+
+.nav-links {
+  width: 775px;
+  height: 26px;
+  margin: 62px 0;
+  &_list {
+    margin: 0;
+    padding: 0;
+    @include flex();
+    &__item {
+      list-style-type: none;
+      padding: 0;
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        @include RobotoFont($font-weight: 200, $letter-spacing: 2px);
+        color: $White;
+      }
+    }
+  }
+}

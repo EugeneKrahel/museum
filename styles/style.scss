@@ -1,0 +1,94 @@
+@import "mixins.scss";
+
+
+
+html {
+  scrollbar-width: none; /* firefox */
+}
+html::-webkit-scrollbar {
+  /* webkit */
+  width: 0;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: none;
+}
+
+.container {
+  margin: 0 240px;
+  padding: 75px 0;
+}
+
+.container * {
+  transition: all 0.3s ease-in-out;
+}
+
+section {
+  width: 1920px;
+  color: $Black;
+  h2 {
+    color: $Font-gold;
+    margin: 0;
+    padding: 0;
+    @include ForumFont();
+  }
+}
+
+.dark-section {
+  color: $White !important;
+  background-color: $Bg-dark;
+  h2 {
+    color: $White;
+  }
+}
+
+.flex-content {
+  padding: 0;
+  margin: 0;
+  @include flex();
+}
+.underline-title {
+  position: relative;
+}
+.underline-title::after {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: $Dark-red;
+}
+
+@import "header.scss";
+
+@import "wellcome.scss";
+
+@import "visiting.scss";
+
+@import "explore.scss";
+
+@import "video.scss";
+
+@import "gallery.scss";
+
+@import "tickets.scss";
+
+.parallax {
+  width: 1920px;
+  height: 400px;
+  background-image: url(../assets/img/parallax.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@import "contacts.scss";
+
+@import "footer.scss";
