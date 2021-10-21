@@ -286,3 +286,5 @@ function hideTicketsForm() {
   form.classList.toggle("closed");
   overlay.classList.toggle("transparent");
 }
+
+showTicketsForm();
