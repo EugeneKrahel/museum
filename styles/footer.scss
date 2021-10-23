@@ -5,7 +5,7 @@ footer {
   height: 265px;
   width: 1920px;
   .container {
-      padding-bottom: 0;
+    padding-bottom: 0;
   }
   .foot-logo {
     @include flex($align: flex-start);
@@ -84,11 +84,123 @@ footer {
   color: $White;
   display: inline-block;
   &:hover {
-    color: #9d8665;
+    color: $Font-gold;
     transform: scale(1.1);
   }
 }
 
 .foot-link {
   @include RobotoFont(200, 22px, 50px, 2px);
+}
+
+@media (max-width: 1024px) {
+  footer {
+    width: 100%;
+    height: 234px;
+    .foot-logo {
+      padding-right: 45px;
+      height: 33px;
+      width: 194px;
+      &_svg {
+        height: 26px;
+        background-position: 0 0;
+      }
+      span {
+        width: 120px;
+        line-height: 31px;
+      }
+    }
+    .foot-nav-wrapper {
+      flex-basis: 745px;
+      justify-content: space-between;
+      .foot-nav {
+        flex-basis: 313px;
+        &__list {
+          column-gap: 100px;
+        }
+      }
+      .foot-media-list {
+        margin-left: 92px;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    & > .container > .flex-content {
+      justify-content: flex-start;
+    }
+    height: 308px;
+    .foot-logo {
+      padding-right: 80px;
+      height: 41px;
+      width: 199px;
+      span {
+        width: 125px;
+        line-height: 50px;
+      }
+    }
+    .foot-nav-wrapper {
+      flex-direction: column;
+      flex-basis: 393px;
+      .foot-nav {
+        flex-basis: auto;
+        &__list {
+          box-sizing: border-box;
+          justify-content: flex-start;
+          column-gap: 160px;
+          padding-left: 19px;
+        }
+      }
+      .foot-media-list {
+        margin-top: 42px;
+        margin-left: 0;
+      }
+    }
+  }
+  .foot-link {
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    & > .container > .flex-content {
+      flex-direction: column;
+    }
+    height: 296px;
+
+    .foot-nav-wrapper {
+      flex-direction: column;
+      flex-basis: auto;
+      .foot-nav {
+        flex-basis: auto;
+        &__list {
+          box-sizing: border-box;
+          justify-content: flex-start;
+          column-gap: 95px;
+          row-gap: 30px;
+          padding-left: 0px;
+          height: 68px;
+        }
+      }
+      .foot-media-list {
+        margin-top: 42px;
+        margin-left: 0;
+      }
+    }
+  }
+  .foot-link {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
 }

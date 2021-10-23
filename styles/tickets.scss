@@ -645,3 +645,249 @@ input[type="number"] {
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .tickets {
+    h2 {
+      margin-bottom: 83px;
+    }
+    img {
+      height: 440px;
+      min-width: 700px;
+      width: 100%;
+    }
+    .radio-holder {
+      display: none;
+    }
+    .amount-tickets {
+      padding-left: 80px;
+      &__padding {
+        padding-left: 0;
+      }
+      h4 {
+        margin: 0 0 29px;
+        text-align: start;
+      }
+      h4.purchase-amount-total {
+        margin: 25px 0 69px;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+    }
+    &__modal {
+      left: calc((100% - 1024px) / 2);
+      width: 100%;
+      &__container {
+        padding: 75px 27px;
+      }
+    }
+  }
+  .purchase-amount-input {
+    width: 175px;
+    margin-bottom: 29px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tickets {
+    h2 {
+      margin-bottom: 63px;
+    }
+    img {
+      align-self: flex-start;
+      height: 340px;
+      min-width: 444px;
+      max-width: 444px;
+      width: 100%;
+    }
+    .amount-tickets {
+      padding-left: 60px;
+      h4 {
+        margin: 0 0 39px;
+      }
+      h4.purchase-amount-total {
+        margin: 39px 0 40px;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+    }
+    &__modal {
+      overflow: auto;
+      top: 0;
+      left: calc((100% - 590px) / 2);
+      width: 590px;
+      &__container {
+        padding: 80px 30px 40px;
+      }
+    }
+  }
+  .purchase-amount-input {
+    margin-bottom: 25px;
+  }
+  .form__container {
+    row-gap: 51px;
+    flex-wrap: wrap;
+    .form__container_left {
+      .form__heading,
+      .form__description {
+        width: 530px;
+      }
+      .form__content {
+        .form__input {
+          width: 530px;
+        }
+        .form__date-and-time {
+          .date__wrapper,
+          .time__wrapper {
+            width: 251px;
+          }
+        }
+        .form__quantity {
+          width: 530px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .tickets {
+    & > .flex-content {
+      flex-direction: column;
+      row-gap: 40px;
+    }
+    img {
+      align-self: flex-start;
+      height: 160px;
+      min-width: 380px;
+      max-width: 380px;
+      width: 100%;
+    }
+    .buy-container {
+      align-self: center;
+    }
+    .amount-tickets {
+      padding-left: 0;
+      h4 {
+        text-align: center;
+        margin: 0 0 20px;
+      }
+      h4.purchase-amount-total {
+        margin: 40px 0;
+      }
+      p {
+        margin: 0 0 15px;
+      }
+    }
+    &__modal {
+      overflow: auto;
+      top: 0;
+      left: calc((100% - 420px) / 2);
+      width: 420px;
+      &__container {
+        padding: 80px 30px 40px;
+      }
+    }
+  }
+  .purchase-amount-input {
+    margin-bottom: 20px;
+  }
+  .form__container {
+    row-gap: 49px;
+    flex-wrap: wrap;
+    .form__container_left {
+      .form__heading,
+      .form__description {
+        width: 360px;
+      }
+      .form__heading {
+        font-size: 32px;
+        line-height: 35px;
+      }
+      .form__content {
+        .form__input {
+          width: 360px;
+        }
+        .form__date-and-time {
+          flex-direction: column;
+          row-gap: 20px;
+          .date__wrapper,
+          .time__wrapper {
+            width: 360px;
+          }
+        }
+        .form__quantity {
+          width: 360px;
+        }
+      }
+    }
+    .form__container_right {
+      height: auto;
+      width: 360px;
+      padding: 25px 15px;
+      .payment__poster {
+        top: 20px;
+        right: 13px;
+        width: 120px;
+        height: 96px;
+        background-size: contain;
+      }
+      .payment__description {
+        margin-bottom: 8px;
+      }
+
+      .payment__ticket {
+        margin-bottom: 24px;
+      }
+
+      .payment__total {
+        padding-top: 7px;
+      }
+
+      .payment__card {
+        position: relative;
+        width: 330px;
+        height: auto;
+        padding-top: 10px;
+        .credit-cards {
+          position: static;
+          flex-direction: column;
+          row-gap: 25px;
+          .card-field {
+            position: initial;
+            margin: 0;
+            width: 330px;
+            height: 209px;
+          }
+          .front__wrap {
+            .front__card-img {
+              width: 56px;
+              height: 65px;
+              top: 44px;
+              right: 19px;
+              background-repeat: no-repeat;
+            }
+            .front__card-name {
+              width: 290px;
+            }
+          }
+          .back {
+            margin: 0;
+            &__cvv-text {
+              margin-right: 25px;
+              margin-top: 4.5px;
+            }
+          }
+        }
+      }
+      .payment__btn {
+        margin-left: 105px;
+        margin-top: 40px;
+        right: 14px;
+        bottom: 30px;
+      }
+    }
+  }
+}

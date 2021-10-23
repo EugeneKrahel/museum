@@ -1,50 +1,119 @@
 @import "mixins.scss";
 
 .cardContainer {
-    @include flex();
-    flex-wrap: wrap;
-    gap: 77px 60px;
-    margin-top: 103px;
+  @include flex();
+  flex-wrap: wrap;
+  gap: 77px 60px;
+  margin-top: 103px;
+}
+
+.visiting {
+  .card {
+    img {
+      display: block;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    h3 {
+      margin: 25px 0 21px;
+      position: relative;
+      @include ForumFont($font-size: 32px, $line-height: 35px);
+    }
+    h3::after {
+      position: absolute;
+      left: 0;
+      bottom: -11px;
+      content: "";
+      height: 2px;
+      width: 68%;
+      background-color: $Dark-red;
+      transition: all 0.2s ease-in-out;
+    }
+    span.s22 {
+      @include RobotoFont(
+        $font-weight: 200,
+        $line-height: 26px,
+        $letter-spacing: normal
+      );
+    }
+    span.s18 {
+      @include RobotoFont(200, 18px, 21px, normal);
+      display: inline-block;
+      margin-top: 10px;
+    }
   }
-  
+  .card:hover h3::after {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardContainer {
+    gap: 60px 108px;
+    margin-top: 83px;
+    justify-content: center;
+  }
   .visiting {
     .card {
       img {
-        display: block;
-        cursor: pointer;
-      }
-      img:hover {
-        transform: scale(1.1);
+        width: 330px;
+        height: 215px;
       }
       h3 {
-        margin: 25px 0 21px;
-        position: relative;
-        @include ForumFont($font-size: 32px, $line-height: 35px);
+        margin-bottom: 22px;
+        font-size: 28px;
+        line-height: 31px;
+        letter-spacing: 3px;
       }
       h3::after {
-        position: absolute;
-        left: 0;
-        bottom: -11px;
-        content: "";
-        height: 2px;
-        width: 68%;
-        background-color: $Dark-red;
-        transition: all 0.2s ease-in-out;
+        width: 150px;
+        bottom: -12px;
       }
       span.s22 {
-        @include RobotoFont(
-          $font-weight: 200,
-          $line-height: 26px,
-          $letter-spacing: normal
-        );
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: normal;
       }
       span.s18 {
-        @include RobotoFont(200, 18px, 21px, normal);
-        display: inline-block;
-        margin-top: 10px;
+        font-size: 16px;
+        line-height: 19px;
       }
     }
-    .card:hover h3::after {
-      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    gap: 40px 56px;
+    margin-top: 63px;
+    margin-bottom: 40px;
+  }
+  .visiting {
+    .card {
+      img {
+        width: 280px;
+        height: 180px;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 24px;
+      }
+      h3::after {
+        width: 150px;
+        bottom: -12px;
+      }
+      span.s22 {
+        font-size: 18px;
+        line-height: 21px;
+      }
     }
   }
+}
+
+@media (max-width: 420px) {
+  .cardContainer {
+    margin-bottom: 0;
+  }
+}

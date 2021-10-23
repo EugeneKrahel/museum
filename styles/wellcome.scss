@@ -137,3 +137,153 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .welcome {
+    height: auto;
+    padding: 0;
+    margin-right: 20px;
+    &_info {
+      top: 50px;
+      &__head {
+        @include ForumFont($font-size: 50px);
+      }
+      &__paragraph {
+        @include RobotoFont(
+          $font-size: 24px,
+          $line-height: 28px,
+          $letter-spacing: 2px
+        );
+      }
+      .btn-link {
+        width: 300px;
+        height: 60px;
+        margin-top: 50px;
+        @include RobotoFont(
+          $font-size: 20px,
+          $line-height: 23px,
+          $letter-spacing: 2px
+        );
+      }
+    }
+  }
+  .carousel {
+    margin-left: 284px;
+    &__container {
+      .carousel__controls {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 75px 0 224px;
+        p.controls__count {
+          font-size: 20px;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+        }
+        .controls__dots {
+          column-gap: 2.5vw;
+          .dot {
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    @include flex($dir: column);
+    &_info {
+      z-index: 0;
+      position: relative;
+      top: 0;
+      &__head {
+        text-align: center;
+        font-size: 40px;
+        line-height: 60px;
+      }
+      &__paragraph {
+        margin-bottom: 50px;
+        @include RobotoFont(
+          $font-size: 20px,
+          $line-height: 20px,
+          $letter-spacing: 2px
+        );
+      }
+      .btn-link {
+        display: none;
+      }
+    }
+  }
+  .carousel {
+    margin-left: 0;
+    &__container {
+      padding-bottom: 0;
+      .carousel__item {
+        & img {
+          display: block;
+        }
+      }
+      .carousel__item::after {
+        background: none;
+      }
+      .carousel__controls {
+        position: relative;
+        padding: 0 164px;
+        height: 100px;
+        .controls__dots {
+          column-gap: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .welcome {
+    &_info {
+      &__head {
+        font-size: 28px;
+        line-height: 40px;
+      }
+      &__paragraph {
+        margin-bottom: 50px;
+        @include RobotoFont($font-size: 16px, $line-height: 19px);
+      }
+    }
+  }
+  .carousel {
+    height: 365px;
+    &__container {
+      .carousel__controls {
+        position: relative;
+        justify-content: center;
+        column-gap: 25px;
+        padding: 0;
+        margin: 0 auto;
+        height: 40px;
+        .controls__dots {
+          column-gap: 10px;
+          .dot {
+            height: 7px;
+            width: 7px;
+            padding: 0;
+          }
+        }
+        p.controls__count {
+          letter-spacing: normal;
+          margin: 0;
+          font-size: 16px;
+          line-height: 40px;
+        }
+        .controls__buttons {
+          column-gap: 15px;
+          > button {
+            transform: scale(0.67);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @import "mixins.scss";
 
 .gallery {
+  padding-bottom: 0;
   h2 {
     margin-bottom: 75px;
   }
@@ -8,6 +9,13 @@
     position: relative;
     max-height: 1885px;
     overflow: hidden;
+    &__gradient {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 360px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    }
     &__inner {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -50,6 +58,63 @@
       }
       .horizontal {
         grid-row-end: span 3;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    h2 {
+      margin-bottom: 60px;
+    }
+    &__pictures {
+      max-height: 1265px;
+      &__gradient {
+        height: 239px;
+      }
+      &__inner {
+        grid-template-columns: 304px 304px 304px;
+        column-gap: 36px;
+        img {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    h2 {
+      margin-bottom: 40px;
+    }
+    &__pictures {
+      max-height: 1080px;
+      &__gradient {
+        height: 235px;
+      }
+      &__inner {
+        grid-template-columns: 352px 352px 0;
+        column-gap: 24px;
+        img {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 420px) {
+  .gallery {
+    &__pictures {
+      max-height: 637px;
+      &__gradient {
+        height: 112px;
+      }
+      &__inner {
+        grid-template-columns: 178px 178px 0;
       }
     }
   }

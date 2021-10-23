@@ -1,7 +1,5 @@
 @import "mixins.scss";
 
-
-
 html {
   scrollbar-width: none; /* firefox */
 }
@@ -25,12 +23,9 @@ h1 {
   padding: 75px 0;
 }
 
-.container * {
-  transition: all 0.3s ease-in-out;
-}
-
 section {
-  width: 1920px;
+  max-width: 1920px;
+  width: 100%;
   color: $Black;
   h2 {
     color: $Font-gold;
@@ -66,6 +61,62 @@ section {
   background-color: $Dark-red;
 }
 
+.parallax {
+  width: 100%;
+  max-width: 1920px;
+  height: 400px;
+  background-image: url(../assets/img/parallax.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 0 20px;
+    padding: 60px 0;
+  }
+
+  section {
+    width: 100%;
+    h2 {
+      @include ForumFont($font-size: 50px, $line-height: 75px);
+    }
+  }
+  .underline-title::after {
+    bottom: -23px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 20px;
+    padding: 40px 0;
+  }
+
+  section {
+    width: 100%;
+    h2 {
+      @include ForumFont($font-size: 40px, $line-height: 60px);
+    }
+  }
+  .underline-title::after {
+    bottom: -23px;
+  }
+  .parallax {
+    height: 300px
+  }
+}
+
+@media (max-width: 420px) {
+  section {
+    h2 {
+      @include ForumFont($font-size: 28px, $line-height: 40px);
+    }
+  }
+}
+
 @import "header.scss";
 
 @import "wellcome.scss";
@@ -80,15 +131,8 @@ section {
 
 @import "tickets.scss";
 
-.parallax {
-  width: 1920px;
-  height: 400px;
-  background-image: url(../assets/img/parallax.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 @import "contacts.scss";
 
 @import "footer.scss";
+
+

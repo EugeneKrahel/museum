@@ -286,3 +286,33 @@ function hideTicketsForm() {
   form.classList.toggle("closed");
   overlay.classList.toggle("transparent");
 }
+
+
+//NAV burger
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links_list");
+    const navLinks = document.querySelectorAll(".nav-links_list__item");
+  
+    // Toggle Nav
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+  
+      // Animate Links
+      navLinks.forEach((link) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade forwards`;
+        }
+      });
+      // Burger Animation
+      burger.classList.toggle("toggle");
+    });
+  };
+  
+  const app = () => {
+    navSlide();
+  };
+  
+  app();

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>museum</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,6 +47,11 @@
                 <a href="#Contacts">Contacts</a>
               </li>
             </ul>
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
           </div>
         </div>
       </nav>
@@ -252,19 +258,19 @@
       <section class="section dark-section" id="Gallery">
         <div class="container gallery">
           <h2>Art Gallery</h2>
-          <div class="gallery__pictures__inner" id="pics"></div>
+          <div class="gallery__pictures">
+            <div class="gallery__pictures__inner" id="pics"></div>
+            <div class="gallery__pictures__gradient"></div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="Tickets">
         <div class="container tickets">
-          <h2 class="underline-title">
-            Buy tickets
-          </h2>
+          <h2 class="underline-title">Buy tickets</h2>
           <div class="flex-content">
-            <img src="assets/img/buy.png"/>
-            <div
-              class="flex-content buy-container">
+            <img src="assets/img/buy.png" />
+            <div class="flex-content buy-container">
               <div class="radio-holder">
                 <h4>Ticket Type</h4>
                 <div class="radio-button">
@@ -359,7 +365,9 @@
                   </div>
                   <h4 class="purchase-amount-total">Total €220</h4>
                 </div>
-                <button class="purchase-amount-buy btn" id="buyTicketsBtn">Buy Now</button>
+                <button class="purchase-amount-buy btn" id="buyTicketsBtn">
+                  Buy Now
+                </button>
               </div>
             </div>
           </div>
@@ -374,20 +382,56 @@
                   <p class="form__description">Tour to Louvre</p>
                   <div class="form__content">
                     <div class="form__date-and-time">
-                      <label for="" class="date__wrapper">Date
-                        <input class="form__input date no-outline" type="date" name="date" required="">
+                      <label for="" class="date__wrapper"
+                        >Date
+                        <input
+                          class="form__input date no-outline"
+                          type="date"
+                          name="date"
+                          required=""
+                        />
                       </label>
-                      <label for="" class="time__wrapper">Time
-                        <input class="form__input time no-outline" type="time" name="time" value="Time" required="">
+                      <label for="" class="time__wrapper"
+                        >Time
+                        <input
+                          class="form__input time no-outline"
+                          type="time"
+                          name="time"
+                          value="Time"
+                          required=""
+                        />
                       </label>
                     </div>
-                    <input class="form__input name no-outline" type="text" name="name" placeholder="Name" required="">
-                    <input class="form__input email no-outline" type="email" name="email" placeholder="E-mail" required="">
-                    <input class="form__input tel no-outline" type="text" name="phone" placeholder="Phone" required="">
-                    <select class="form__input ticket no-outline" id="ticket" name="ticket" required="">
+                    <input
+                      class="form__input name no-outline"
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      required=""
+                    />
+                    <input
+                      class="form__input email no-outline"
+                      type="email"
+                      name="email"
+                      placeholder="E-mail"
+                      required=""
+                    />
+                    <input
+                      class="form__input tel no-outline"
+                      type="text"
+                      name="phone"
+                      placeholder="Phone"
+                      required=""
+                    />
+                    <select
+                      class="form__input ticket no-outline"
+                      id="ticket"
+                      name="ticket"
+                      required=""
+                    >
                       <option selected="" disabled="">Ticket Type</option>
                       <option value="permanent">Permanent exhibition</option>
-                      <option value="temporary">Temporary exhibition</option>  
+                      <option value="temporary">Temporary exhibition</option>
                       <option value="combined">Combined Admission</option>
                     </select>
                     <div class="form__quantity">
@@ -395,17 +439,25 @@
                       <div class="basic__row flex-row">
                         <p class="basic__name">Basic 18+ (20 €)</p>
                         <div class="name__count">
-                            <button class="no-outline" type="button">–</button>
-                            <input class="basic__row-input no-outline" type="number" value="1">
-                            <button class="no-outline" type="button">+</button>
+                          <button class="no-outline" type="button">–</button>
+                          <input
+                            class="basic__row-input no-outline"
+                            type="number"
+                            value="1"
+                          />
+                          <button class="no-outline" type="button">+</button>
                         </div>
                       </div>
                       <div class="senior__row flex-row">
                         <p class="senior__name">Senior 65+ (10 €)</p>
                         <div class="name__count">
-                            <button class="no-outline" type="button">–</button>
-                            <input class="senior__row-input no-outline" type="number" value="0">
-                            <button class="no-outline" type="button"> +</button>
+                          <button class="no-outline" type="button">–</button>
+                          <input
+                            class="senior__row-input no-outline"
+                            type="number"
+                            value="0"
+                          />
+                          <button class="no-outline" type="button">+</button>
                         </div>
                       </div>
                     </div>
@@ -437,11 +489,21 @@
                       <div class="credit-cards">
                         <div class="card-field front">
                           <div class="front__wrap">
-                            <label>Card number
-                              <input class="front__card-number no-outline" type="number" max="9999999999999999" required=""></label>
-                            <label>Expiration date
+                            <label
+                              >Card number
+                              <input
+                                class="front__card-number no-outline"
+                                type="number"
+                                max="9999999999999999"
+                                required=""
+                            /></label>
+                            <label
+                              >Expiration date
                               <p class="front__card-full-date">
-                                <select class="front__card-month no-outline" required="">
+                                <select
+                                  class="front__card-month no-outline"
+                                  required=""
+                                >
                                   <option value="01">01</option>
                                   <option value="02">02</option>
                                   <option value="03">03</option>
@@ -455,7 +517,10 @@
                                   <option value="11">11</option>
                                   <option value="12">12</option>
                                 </select>
-                                <select class="front__card-year no-outline" required="">
+                                <select
+                                  class="front__card-year no-outline"
+                                  required=""
+                                >
                                   <option value="2021">2021</option>
                                   <option value="2022">2022</option>
                                   <option value="2023">2023</option>
@@ -467,23 +532,43 @@
                                 </select>
                               </p>
                             </label>
-                            <label>Cardholder name
-                              <input class="front__card-name no-outline" type="text">
+                            <label
+                              >Cardholder name
+                              <input
+                                class="front__card-name no-outline"
+                                type="text"
+                              />
                             </label>
                             <p class="front__card-img"></p>
                           </div>
                         </div>
                         <div class="card-field back">
                           <div class="line"></div>
-                          <label>CVC/CVV
-                            <input class="back__cvv no-outline" type="number" max="9999" required="">
+                          <label
+                            >CVC/CVV
+                            <input
+                              class="back__cvv no-outline"
+                              type="number"
+                              max="9999"
+                              required=""
+                            />
                           </label>
-                          <p class="back__cvv-text">The last<br> 3 or 4 digits on back<br> of the card</p>
+                          <p class="back__cvv-text">
+                            The last<br />
+                            3 or 4 digits on back<br />
+                            of the card
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button class="payment__btn no-outline" id="formSubmitBtn" type="submit">Book</button>
+                  <button
+                    class="payment__btn no-outline"
+                    id="formSubmitBtn"
+                    type="submit"
+                  >
+                    Book
+                  </button>
                 </div>
               </div>
             </form>
